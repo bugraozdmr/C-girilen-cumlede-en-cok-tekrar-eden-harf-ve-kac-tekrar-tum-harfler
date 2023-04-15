@@ -3,9 +3,9 @@
 
 
 int main() {
-	/*Kullanıcıdan bir cümle girmesini isteyin.
-	Girilen cümle içindeki harflerin kaç kere yazıldığını
-	ekrana bastırın.*/
+	/*KullanÄ±cÄ±dan bir cÃ¼mle girmesini isteyin.
+	Girilen cÃ¼mle iÃ§indeki harflerin kaÃ§ kere yazÄ±ldÄ±ÄŸÄ±nÄ±
+	ekrana bastÄ±rÄ±n.*/
 	char a[100];
 	int k,l[34],o=0,m=0,d=0,p=0,ec=0;		//puts direkt yazdirmak istersek :!
 	printf("bir cumle girin:"); gets(a);
@@ -17,27 +17,27 @@ int main() {
 		printf("%c", a[i]);
 	}
 	printf("\n");
-	for (int k = 97; k <= 122; k++) {	//burası cok komplike oldu
+	for (int k = 97; k <= 122; k++) {	//harflerin ascii karsiliklarini bulalim
 		for (int i = 0; i < k; i++) {
 			if ((char)k == a[i]) {
 				if (p != 1) {
 					printf("%c harfi ", a[i]);
 				}
-				p = 1;
-				m++;
-				d = 1;
+				p = 1;		//eger bulursun p=1 yaparak tekrar tekrar bu harfi yazmasin
+				m++;		//kac kez varsa her dongude m artiyor
+				d = 1;		//d=1 yaparak asagidaki kosula girsin p eski haline donsun harf var mi yok mu onu teyit edecek
 			}
 		}
 		if (d == 1) {
 			l[o] = m;
 
-			//yukarının devami
-			printf("%d kez var.", l[o]);
+			//yukarÄ±nÄ±n devami
+			printf("%d kez var.", l[o]);		//kac kez var ise yaziyor
 			printf("\n");
 
-			m = 0;
-			o++;
-			p = 0;
+			m = 0;		//sifirlamam gerek diger harf icin
+			o++;		//diger dizine gecsin her harf icin index tutmasin
+			p = 0;		//p eski haline donsun 
 		}
 		d = 0;
 	}
